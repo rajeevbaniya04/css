@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .background {
+        background: linear-gradient(
+            to bottom right,
+            rgb(0, 0, 0, 0.2),
+            rgb(0, 0, 0, 0.2)
+          ),
+          url(images/cover\ 2.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        color: rgb(0, 0, 0, 0.2);
+        color: #eee;
+        position: relative;
+      }
+      .background h3 {
+        font-size: 32px;
+      }
+      .background p {
+        font-size: 20px;
+      }
+
+      .top-nav {
+        padding: 10px 20px;
+        background-color: gainsboro;
+      }
+      .navigation {
+        background-color: rgb(107, 142, 35, 0.3);
+        padding: 20px;
+        /* position: fixed; */
+        position: sticky;
+        top: 0;
+        /* width: 100%; */
+      }
+      .test {
+        background-color: rgb(154, 205, 50);
+        color: #eee;
+      }
+      .absolute {
+        position: absolute;
+        top: 50%;
+        width: 50%;
+        transform: translateY(-50%);
+        padding: 20px;
+      }
+      /* flex box start */
+      .flex-heading {
+        margin-top: 30px;
+      }
+      .flex {
+        background-color: aquamarine;
+        height: 500px;
+        margin: 10px 0;
+        align-items: center;
+        display: flex;
+        /* flex-wrap: wrap; */
+        gap: 20px;
+      }
+      .flex-item {
+        padding: 20px;
+        font-size: 20px;
+      }
+      .red {
+        background-color: red;
+        flex-basis: 33.33%;
+      }
+      .blue {
+        background-color: blue;
+        flex-basis: 33.33%;
+      }
+      .green {
+        background-color: green;
+        flex-basis: 33.33%;
+      }
+      /* flex box end */
+      .header {
+        padding: 0px 20px;
+        background-color: grey;
+      }
+      .header a {
+        text-decoration: none;
+        font-size: 20px;
+        color: #eee;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        padding: 20px 0;
+        display: inline-block;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+      .nav-links {
+        display: flex;
+        gap: 44px;
+        list-style: none;
+        align-items: center;
+      }
+      .nav .nav-links a {
+        font-size: 16px;
+      }
+      .nav .nav-links a:hover {
+        color: yellowgreen;
+        height: 100%;
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-items {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        position: absolute;
+        background-color: #eee;
+        z-index: 2;
+        width: max-content;
+        top: 30px;
+        display: none;
+        left: 7px;
+      }
+
+      .dropdown-items a {
+        padding: 6px 10px;
+        box-sizing: border-box;
+        color: black;
+        display: inline-block;
+      }
+
+      .dropdown-items a:not(last-child) {
+        border-bottom: 1px solid yellowgreen;
+      }
+
+      .dropdown:hover .dropdown-items {
+        border-top: 2px solid red;
+        display: flex;
+      }
+
+      .fa-bars {
+        display: none;
+        position: absolute;
+        top: 22px;
+        right: 10px;
+        cursor: pointer;
+      }
+
+      .toggle-nav {
+        display: flex !important;
+      }
+
+      @media screen and (max-width: 700px) {
+        .fa-bars {
+          display: block;
+        }
+        .nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          gap: 8px;
+          align-items: flex-start;
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="#">Logo</a>
+        <i class="fa-solid fa-bars" id="nav-show-hide" onclick="showHide()"></i>
+        <ul class="nav-links" id="nav-link">
+          <li><a href="#">home</a></li>
+          <li class="dropdown">
+            <a href="#" class="hov">about</a>
+            <!-- <ul class="dropdown-items">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul> -->
+          </li>
+          <li><a href="#">contact</a></li>
+          <li><a href="#">gallery</a></li>
+          <li><a href="#">blogs</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="background">
+      <div class="top-nav">some contents</div>
+      <div class="navigation">
+        <p>navigation</p>
+      </div>
+      <div class="absolute">
+        <h3>The heading</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+          similique commodi aperiam delectus harum porro consequuntur impedit
+          eum aliquam veniam cumque blanditiis illo molestias cum facere, eaque
+          eius amet quisquam?
+        </p>
+        <a href="#">Learn more</a>
+      </div>
+    </div>
+    <div class="test">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam fugiat
+      incidunt, ab id aliquid quod numquam, ex saepe quas veritatis suscipit eum
+      quo nihil perspiciatis repudiandae minima, minus adipisci at? Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Molestias modi autem facilis
+      possimus quae officiis, odio perferendis, accusantium iure, doloribus
+      dolorem. Perferendis, explicabo ex. Repellendus dolore officia sint quia
+      excepturi.
+    </div>
+    <h3 class="flex-heading">Flex Box</h3>
+    <div class="flex">
+      <div class="flex-item red">
+        <p>Red Item</p>
+      </div>
+      <div class="flex-item green">
+        <p>Green Item</p>
+      </div>
+      <div class="flex-item blue">
+        <p>Blue Item</p>
+      </div>
+    </div>
+  </body>
+  <script>
+    function showHide() {
+      const navLink = document.getElementById("nav-link");
+      navLink.classList.toggle("toggle-nav");
+    }
+  </script>
+</html>

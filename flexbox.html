@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h2 {
+        font-size: 30px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        margin: 24px 0;
+        text-align: center;
+      }
+      .flex-container {
+        background-color: aquamarine;
+        align-items: center;
+        /* align-items: flex-start; */
+        justify-content: center;
+        justify-content: space-around;
+        height: 500px;
+        display: flex;
+        gap: 20px;
+        /* flex-wrap: wrap; */
+      }
+      .flex-items {
+        height: 300px;
+        /* width: 300px; */
+        flex-basis: 33.33%;
+      }
+      .red {
+        background-color: red;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .green {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Flexbox</h2>
+    <div class="flex-container">
+      <div class="flex-items red"></div>
+      <div class="flex-items blue"></div>
+      <div class="flex-items green"></div>
+    </div>
+  </body>
+</html>
